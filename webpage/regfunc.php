@@ -36,11 +36,12 @@ if(isset($_POST["username"], $_POST["fullname"], $_POST[ "email"],$_POST["pwd"],
 
 	echo $sql;	
 
-	$result = mysql_query($sql);
-	if($result === false){
-	    throw new Exception(mysql_error($conn));
+	if(!$conn->query($sql)){
+		$errmsg = "Error description: " . $conn->error;
 	}
-
+	else{
+		header('Location: index.php',301);   
+	}
 
 
 }
