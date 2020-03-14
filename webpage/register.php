@@ -1,9 +1,3 @@
-<?php  
-
-include('connection.php');
-
-?>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
@@ -12,11 +6,13 @@ include('connection.php');
 	</head>
 	
 	<body>
-		<?php include('header.php'); ?>
+		<?php include('header.php');
+			  include 'regfunc.php'; 
+			  ?>
 
 		<h2>User Details Form</h2>
 		<h4>Please, fill below fields correctly</h4>
-		<form action="register.php" method="post">
+		<form action="regfunc.php" method="post">
 				<ul class="form">
 					<li>
 						<label for="username">Username</label>
@@ -37,6 +33,7 @@ include('connection.php');
 					<li>
 						<label for="confirm_pwd">Confirm Password</label>
 						<input type="password" name="confirm_pwd" id="confirm_pwd" required />
+						<h2><?= $errmsg; ?></h2>
 					</li>
 					<li>
 						<input type="submit" value="Submit" /> &nbsp; Already registered? <a href="index.php">Login</a>
