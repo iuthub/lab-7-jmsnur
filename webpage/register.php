@@ -16,7 +16,10 @@
 				<ul class="form">
 					<li>
 						<label for="username">Username</label>
-						<input type="text" name="username" id="username" required/>
+						<input type="text" name="username" id="username" pattern="([A-Za-z0-9]{4,20})" 
+						title="Only Latin charecters
+Numbers 0-9
+Min 4 Max 20 charecters!" required/>
 					</li>
 					<li>
 						<label for="fullname">Full Name</label>
